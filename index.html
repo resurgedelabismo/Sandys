@@ -10,12 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --negro-profundo: #0a0a0a;
-            --negro-suave: #1a1a1a;
+            /* Paleta Gothic Lux Ceniza */
+            --negro-profundo: #080808;
+            --negro-suave: #141414;
             --rosa-cute: #ff85a1;
-            --rojo-glam: #c41e3a;
-            --blanco-sutil: #f4f4f4;
-            --glow-rosa: rgba(255, 133, 161, 0.3);
+            --rojo-glam: #a31621; /* Rojo más profundo para el lujo */
+            --ceniza-rosada: #d8c2c6; /* Sustituto del blanco puro */
+            --hueso-oscuro: #b8a3a7;
+            --gris-calido: #8e7f82;
+            --glow-lux: rgba(255, 133, 161, 0.15);
+            --glow-ceniza: rgba(216, 194, 198, 0.2);
         }
 
         * {
@@ -27,7 +31,7 @@
 
         body {
             background-color: var(--negro-profundo);
-            color: var(--blanco-sutil);
+            color: var(--ceniza-rosada); /* Ghostly elegant text */
             font-family: 'Quicksand', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
@@ -36,30 +40,33 @@
         h1, h2, h3 {
             font-family: 'Cinzel', serif;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .highlight-font {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             text-transform: none;
+            color: var(--rosa-cute);
         }
 
-        /* --- Estética Gótico-Glam --- */
+        /* --- Estética Gótico-Glam Premium --- */
         .gothic-border {
-            border: 1px solid rgba(255, 133, 161, 0.2);
+            border: 1px solid rgba(216, 194, 198, 0.1);
             position: relative;
         }
 
         .gothic-border::before {
             content: '🖤';
             position: absolute;
-            top: -10px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--negro-profundo);
-            padding: 0 10px;
+            padding: 0 15px;
             font-size: 0.8rem;
+            color: var(--hueso-oscuro);
+            text-shadow: 0 0 8px var(--glow-lux);
         }
 
         /* --- Hero Section --- */
@@ -71,110 +78,138 @@
             align-items: center;
             text-align: center;
             padding: 20px;
-            background: radial-gradient(circle at center, #1a0a0e 0%, var(--negro-profundo) 70%);
+            background: radial-gradient(circle at center, #1a0d0f 0%, var(--negro-profundo) 80%);
             position: relative;
         }
 
         .hero-logo {
-            font-size: 3rem;
-            color: var(--blanco-sutil);
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px var(--glow-rosa);
+            font-size: 3.2rem;
+            color: var(--ceniza-rosada);
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px var(--glow-lux), 0 0 40px rgba(163, 22, 33, 0.1);
+            letter-spacing: 5px;
         }
 
         .hero-logo span {
             color: var(--rosa-cute);
+            text-shadow: 0 0 15px var(--glow-lux);
         }
 
         .hero-tagline {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--rosa-cute);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--hueso-oscuro);
             font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .btn-ws, .btn-essence {
-            background: linear-gradient(45deg, var(--rojo-glam), var(--rosa-cute));
-            color: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            color: var(--ceniza-rosada);
             text-decoration: none;
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 18px 40px;
+            border-radius: 2px; /* Estética más arquitectónica/lux */
+            border: 1px solid rgba(255, 133, 161, 0.3);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5), 0 0 10px var(--glow-lux);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
             cursor: pointer;
-            border: none;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Cinzel', serif;
+        }
+
+        .btn-ws:hover, .btn-essence:hover {
+            border-color: var(--rosa-cute);
+            box-shadow: 0 0 20px var(--glow-lux);
+            transform: translateY(-2px);
+            color: var(--rosa-cute);
         }
 
         .btn-ws {
-            animation: pulse 2s infinite;
+            animation: etherealPulse 4s infinite ease-in-out;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes etherealPulse {
+            0% { box-shadow: 0 0 10px var(--glow-lux); border-color: rgba(255, 133, 161, 0.3); }
+            50% { box-shadow: 0 0 25px var(--glow-lux); border-color: rgba(255, 133, 161, 0.6); }
+            100% { box-shadow: 0 0 10px var(--glow-lux); border-color: rgba(255, 133, 161, 0.3); }
         }
 
         /* --- Servicios --- */
         .section-container {
-            padding: 80px 20px;
-            max-width: 600px;
+            padding: 100px 24px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: var(--blanco-sutil);
+            font-size: 1.6rem;
+            margin-bottom: 60px;
+            color: var(--ceniza-rosada);
+            opacity: 0.9;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 2px;
+            width: 40px;
+            height: 1px;
             background: var(--rojo-glam);
-            margin: 15px auto;
+            margin: 20px auto;
+            box-shadow: 0 0 10px var(--rojo-glam);
         }
 
         .service-card {
-            background: var(--negro-suave);
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+            padding: 35px;
+            border-radius: 0; /* Lux sharp edges */
+            margin-bottom: 30px;
+            border-left: 1px solid rgba(255, 133, 161, 0.2);
+            transition: 0.5s;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
+        }
+
+        .service-card:hover {
+            border-left-color: var(--rosa-cute);
+            background: rgba(25, 25, 25, 0.9);
         }
 
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             min-width: 60px;
+            filter: grayscale(0.5) sepia(0.2);
+            transition: 0.5s;
+        }
+
+        .service-card:hover .service-icon {
+            filter: grayscale(0);
+            transform: scale(1.1);
         }
 
         .service-info h3 {
-            font-size: 1.1rem;
-            color: var(--rosa-cute);
-            margin-bottom: 5px;
+            font-size: 1rem;
+            color: var(--hueso-oscuro);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
         .service-info p {
-            font-size: 0.95rem;
-            opacity: 0.8;
+            font-size: 0.9rem;
+            color: var(--gris-calido);
+            font-weight: 300;
         }
 
         /* --- Sobre Sandy --- */
         .about-section {
             background: var(--negro-suave);
-            border-radius: 30px 30px 0 0;
-            margin-top: 40px;
+            border-top: 1px solid rgba(255, 133, 161, 0.1);
+            margin-top: 60px;
         }
 
         .about-content {
@@ -182,52 +217,60 @@
         }
 
         .sandy-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(var(--rosa-cute), var(--rojo-glam));
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #1a0d0f 0%, #080808 100%);
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 3rem;
-            border: 4px solid var(--negro-profundo);
-            box-shadow: 0 0 20px var(--glow-rosa);
+            border: 1px solid rgba(255, 133, 161, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow-lux);
+            color: var(--rosa-cute);
+            text-shadow: 0 0 10px var(--glow-lux);
         }
 
         .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--blanco-sutil);
-            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--ceniza-rosada);
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         /* --- Call to Action --- */
         .final-cta {
             text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(to top, #1a0a0e, var(--negro-profundo));
+            padding: 120px 24px;
+            background: radial-gradient(circle at bottom, #1a0d0f 0%, var(--negro-profundo) 70%);
         }
 
         .cta-phrase {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
             display: block;
+            color: var(--hueso-oscuro);
+            font-style: italic;
         }
 
         /* --- Footer --- */
         footer {
-            padding: 40px 20px;
+            padding: 60px 24px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            opacity: 0.6;
+            border-top: 1px solid rgba(216, 194, 198, 0.03);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--gris-calido);
+            text-transform: uppercase;
         }
 
         .hearts {
             color: var(--rojo-glam);
+            opacity: 0.6;
         }
 
         /* --- Modal Estilo --- */
@@ -237,15 +280,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(8px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
         }
 
         .modal-overlay.active {
@@ -255,42 +298,41 @@
 
         .modal-content {
             background: var(--negro-suave);
-            width: 90%;
-            max-width: 450px;
-            padding: 40px 30px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 133, 161, 0.3);
+            width: 92%;
+            max-width: 480px;
+            padding: 60px 40px;
+            border: 1px solid rgba(255, 133, 161, 0.15);
             position: relative;
-            transform: scale(0.8);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-height: 85vh;
+            transform: translateY(30px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px var(--glow-lux);
         }
 
         .modal-overlay.active .modal-content {
-            transform: scale(1);
+            transform: translateY(0);
         }
 
         .modal-item {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-align: center;
         }
 
         .modal-item h4 {
-            color: var(--rosa-cute);
+            color: var(--hueso-oscuro);
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
         }
 
         .modal-item p {
             font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--ceniza-rosada);
+            line-height: 1.8;
             font-style: italic;
-            opacity: 0.9;
         }
 
         .values-list {
@@ -298,35 +340,40 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 15px;
         }
 
         .values-list li {
-            background: rgba(255, 133, 161, 0.1);
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 133, 161, 0.2);
+            font-size: 0.75rem;
+            color: var(--gris-calido);
+            border: 1px solid rgba(216, 194, 198, 0.1);
+            padding: 6px 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .btn-close {
             background: none;
-            border: 1px solid var(--rosa-cute);
+            border-bottom: 1px solid var(--rosa-cute);
+            border-top: none;
+            border-left: none;
+            border-right: none;
             color: var(--rosa-cute);
-            padding: 10px 25px;
-            border-radius: 50px;
-            margin: 20px auto 0;
+            padding: 8px 0;
+            margin: 30px auto 0;
             display: block;
             cursor: pointer;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
             transition: 0.3s;
+            opacity: 0.7;
         }
 
         .btn-close:hover {
-            background: var(--rosa-cute);
-            color: white;
+            opacity: 1;
+            letter-spacing: 5px;
         }
 
         /* Scroll suave */
@@ -336,9 +383,10 @@
 
         /* Mobile specific adjustments */
         @media (max-width: 480px) {
-            .hero-logo { font-size: 2.5rem; }
-            .section-title { font-size: 1.5rem; }
-            .service-card { flex-direction: column; text-align: center; }
+            .hero-logo { font-size: 2.4rem; letter-spacing: 3px; }
+            .section-title { font-size: 1.3rem; }
+            .service-card { padding: 30px 20px; }
+            .about-text { font-size: 1rem; }
         }
     </style>
 </head>
@@ -349,19 +397,19 @@
         <div class="hero-logo">Sandy’s <span>Nails</span></div>
         <p class="hero-tagline">Uñas lindas, actitud poderosa 💅✨</p>
         <a href="https://wa.me/527351889983" class="btn-ws">
-            💬 Agenda tu cita
+            💬 Hablemos de tu diseño ideal
         </a>
     </header>
 
     <!-- Servicios -->
     <section class="section-container">
-        <h2 class="section-title">Nuestros Servicios</h2>
+        <h2 class="section-title">Lo que hacemos con amor</h2>
         
         <div class="service-card">
             <div class="service-icon">💅</div>
             <div class="service-info">
                 <h3>Gel Semipermanente</h3>
-                <p>Color impecable y brillo espejo que dura semanas. ¡Tus manos siempre listas!</p>
+                <p>Colores vibrantes y un brillo que dura semanas. La forma perfecta de lucir unas manos cuidadas siempre.</p>
             </div>
         </div>
 
@@ -369,7 +417,7 @@
             <div class="service-icon">🖤</div>
             <div class="service-info">
                 <h3>Acrílico</h3>
-                <p>Largo soñado y resistencia máxima. Estructuras perfectas para manos de impacto.</p>
+                <p>El largo y la forma que siempre soñaste, con acabados impecables para que te sientas increíble.</p>
             </div>
         </div>
 
@@ -377,7 +425,7 @@
             <div class="service-icon">🎨</div>
             <div class="service-info">
                 <h3>Custom Art</h3>
-                <p>Diseños personalizados que cuentan tu historia. Si lo imaginas, lo creamos.</p>
+                <p>Tus ideas favoritas hechas realidad en tus uñas. Un diseño único hecho especialmente para ti.</p>
             </div>
         </div>
     </section>
@@ -386,17 +434,16 @@
     <section class="section-container about-section gothic-border">
         <div class="about-content">
             <div class="sandy-avatar">✨</div>
-            <h2 class="section-title">Hola, soy Sandy</h2>
+            <h2 class="section-title">Un poquito sobre mí</h2>
             <p class="about-text">
-                "Amo crear uñas que no solo se vean hermosas, sino que te hagan sentir <span class="highlight-font">imparable</span>. En mi espacio, cada detalle cuenta porque tus manos merecen brillar tanto como tú."
+                "Amo crear diseños que te saquen una sonrisa cada vez que mires tus manos. Mi meta es que te vayas feliz y sintiéndote <span class="highlight-font">especial</span> con tus uñas nuevas."
             </p>
         </div>
     </section>
 
     <!-- Final CTA -->
     <section class="final-cta">
-        <span class="cta-phrase">¿Lista para consentirte? 💖</span>
-        <p style="margin-bottom: 30px; opacity: 0.8;">Tu estilo único te está esperando.</p>
+        <span class="cta-phrase">¿Hacemos magia en tus uñas hoy? 💖</span>
         <button class="btn-essence" onclick="toggleModal()">
             ✨ Nuestra esencia
         </button>
@@ -407,22 +454,22 @@
         <div class="modal-content gothic-border">
             <div class="modal-item">
                 <h4>💖 Misión</h4>
-                <p>“Hacer que cada persona se sienta segura, hermosa y poderosa a través de uñas hechas con amor y dedicación.”</p>
+                <p>“Hacerte sentir hermosa y segura con diseños hechos con el corazón, cuidando cada detalle con mucha paciencia.”</p>
             </div>
             
             <div class="modal-item">
                 <h4>🌙 Visión</h4>
-                <p>“Ser un espacio donde la creatividad, el estilo y el cuidado se encuentren en cada diseño.”</p>
+                <p>“Convertirnos en tu rinconcito favorito para transformar tus manos y consentirte como te mereces con el mejor estilo gótico-cute.”</p>
             </div>
 
             <div class="modal-item">
                 <h4>✨ Valores</h4>
                 <ul class="values-list">
                     <li>Amor por el detalle</li>
-                    <li>Creatividad</li>
+                    <li>Creatividad total</li>
                     <li>Higiene y cuidado</li>
-                    <li>Confianza</li>
-                    <li>Trato bonito</li>
+                    <li>Diseños únicos</li>
+                    <li>Trato lindo y cercano</li>
                 </ul>
             </div>
 
@@ -433,8 +480,8 @@
     <!-- Footer -->
     <footer>
         <p>SANDY’S NAILS &copy; 2024</p>
-        <p>Hecho con <span class="hearts">♥</span> para chicas poderosas</p>
-        <p style="margin-top: 10px; font-size: 0.7rem;">Gótico-Glam Experience</p>
+        <p>Hecho con <span class="hearts">♥</span> para que brilles siempre</p>
+        <p style="margin-top: 15px; font-size: 0.6rem; opacity: 0.5;">Gothic Lux Ceniza Experience</p>
     </footer>
 
     <script>
@@ -443,7 +490,6 @@
             const modal = document.getElementById('essenceModal');
             modal.classList.toggle('active');
             
-            // Prevent scrolling when modal is open
             if (modal.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -473,10 +519,9 @@
         document.querySelectorAll('.service-card').forEach(card => {
             card.style.opacity = "0";
             card.style.transform = "translateY(20px)";
-            card.style.transition = "all 0.6s ease-out";
+            card.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
             observer.observe(card);
         });
     </script>
 </body>
 </html>
-

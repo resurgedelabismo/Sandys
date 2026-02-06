@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandy’s Nails 🖤 Uñas con Actitud</title>
+    <!-- Fuentes Elegantes y Cutes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --negro-profundo: #0a0a0a;
+            --negro-suave: #1a1a1a;
+            --rosa-cute: #ff85a1;
+            --rojo-glam: #c41e3a;
+            --blanco-sutil: #f4f4f4;
+            --glow-rosa: rgba(255, 133, 161, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--negro-profundo);
+            color: var(--blanco-sutil);
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight-font {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            text-transform: none;
+        }
+
+        /* --- Estética Gótico-Glam --- */
+        .gothic-border {
+            border: 1px solid rgba(255, 133, 161, 0.2);
+            position: relative;
+        }
+
+        .gothic-border::before {
+            content: '🖤';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--negro-profundo);
+            padding: 0 10px;
+            font-size: 0.8rem;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, #1a0a0e 0%, var(--negro-profundo) 70%);
+            position: relative;
+        }
+
+        .hero-logo {
+            font-size: 3rem;
+            color: var(--blanco-sutil);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px var(--glow-rosa);
+        }
+
+        .hero-logo span {
+            color: var(--rosa-cute);
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--rosa-cute);
+            font-weight: 300;
+        }
+
+        .btn-ws, .btn-essence {
+            background: linear-gradient(45deg, var(--rojo-glam), var(--rosa-cute));
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .btn-ws {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Servicios --- */
+        .section-container {
+            padding: 80px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--blanco-sutil);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--rojo-glam);
+            margin: 15px auto;
+        }
+
+        .service-card {
+            background: var(--negro-suave);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+        }
+
+        .service-info h3 {
+            font-size: 1.1rem;
+            color: var(--rosa-cute);
+            margin-bottom: 5px;
+        }
+
+        .service-info p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* --- Sobre Sandy --- */
+        .about-section {
+            background: var(--negro-suave);
+            border-radius: 30px 30px 0 0;
+            margin-top: 40px;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .sandy-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(var(--rosa-cute), var(--rojo-glam));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            border: 4px solid var(--negro-profundo);
+            box-shadow: 0 0 20px var(--glow-rosa);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--blanco-sutil);
+            font-style: italic;
+        }
+
+        /* --- Call to Action --- */
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to top, #1a0a0e, var(--negro-profundo));
+        }
+
+        .cta-phrase {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+
+        .hearts {
+            color: var(--rojo-glam);
+        }
+
+        /* --- Modal Estilo --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--negro-suave);
+            width: 90%;
+            max-width: 450px;
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 133, 161, 0.3);
+            position: relative;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-item {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .modal-item h4 {
+            color: var(--rosa-cute);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-item p {
+            font-size: 0.95rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .values-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .values-list li {
+            background: rgba(255, 133, 161, 0.1);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 133, 161, 0.2);
+        }
+
+        .btn-close {
+            background: none;
+            border: 1px solid var(--rosa-cute);
+            color: var(--rosa-cute);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin: 20px auto 0;
+            display: block;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-close:hover {
+            background: var(--rosa-cute);
+            color: white;
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 480px) {
+            .hero-logo { font-size: 2.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .service-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-logo">Sandy’s <span>Nails</span></div>
+        <p class="hero-tagline">Uñas lindas, actitud poderosa 💅✨</p>
+        <a href="https://wa.me/527351889983" class="btn-ws">
+            💬 Agenda tu cita
+        </a>
+    </header>
+
+    <!-- Servicios -->
+    <section class="section-container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        
+        <div class="service-card">
+            <div class="service-icon">💅</div>
+            <div class="service-info">
+                <h3>Gelish</h3>
+                <p>Color impecable y brillo espejo que dura semanas. ¡Tus manos siempre listas!</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🖤</div>
+            <div class="service-info">
+                <h3>Acrílico</h3>
+                <p>Largo soñado y resistencia máxima. Estructuras perfectas para manos de impacto.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <div class="service-info">
+                <h3>Custom Art</h3>
+                <p>Diseños personalizados que cuentan tu historia. Si lo imaginas, lo creamos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Sandy -->
+    <section class="section-container about-section gothic-border">
+        <div class="about-content">
+            <div class="sandy-avatar">✨</div>
+            <h2 class="section-title">Hola, soy Sandy</h2>
+            <p class="about-text">
+                "Amo crear uñas que no solo se vean hermosas, sino que te hagan sentir <span class="highlight-font">imparable</span>. En mi espacio, cada detalle cuenta porque tus manos merecen brillar tanto como tú."
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <span class="cta-phrase">¿Lista para consentirte? 💖</span>
+        <p style="margin-bottom: 30px; opacity: 0.8;">Tu estilo único te está esperando.</p>
+        <button class="btn-essence" onclick="toggleModal()">
+            ✨ Nuestra esencia
+        </button>
+    </section>
+
+    <!-- Modal: Esencia -->
+    <div class="modal-overlay" id="essenceModal">
+        <div class="modal-content gothic-border">
+            <div class="modal-item">
+                <h4>💖 Misión</h4>
+                <p>“Hacer que cada persona se sienta segura, hermosa y poderosa a través de uñas hechas con amor y dedicación.”</p>
+            </div>
+            
+            <div class="modal-item">
+                <h4>🌙 Visión</h4>
+                <p>“Ser un espacio donde la creatividad, el estilo y el cuidado se encuentren en cada diseño.”</p>
+            </div>
+
+            <div class="modal-item">
+                <h4>✨ Valores</h4>
+                <ul class="values-list">
+                    <li>Amor por el detalle</li>
+                    <li>Creatividad</li>
+                    <li>Higiene y cuidado</li>
+                    <li>Confianza</li>
+                    <li>Trato bonito</li>
+                </ul>
+            </div>
+
+            <button class="btn-close" onclick="toggleModal()">Cerrar ✨</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>SANDY’S NAILS &copy; 2024</p>
+        <p>Hecho con <span class="hearts">♥</span> para chicas poderosas</p>
+        <p style="margin-top: 10px; font-size: 0.7rem;">Gótico-Glam Experience</p>
+    </footer>
+
+    <script>
+        // Modal Logic
+        function toggleModal() {
+            const modal = document.getElementById('essenceModal');
+            modal.classList.toggle('active');
+            
+            // Prevent scrolling when modal is open
+            if (modal.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal clicking outside
+        document.getElementById('essenceModal').addEventListener('click', function(e) {
+            if (e.target === this) toggleModal();
+        });
+
+        // Efecto sutil al hacer scroll para las tarjetas
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
